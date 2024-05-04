@@ -4,6 +4,7 @@ import Header from "../Shared/Header/Header";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import CheckOut from "../Pages/CheckOut";
 
 export const router = createBrowserRouter([
   {
@@ -23,8 +24,9 @@ export const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
-        path: "/about",
-        element: <div>This is about</div>,
+        path: "/book/:id",
+        element: <CheckOut></CheckOut>,
+        loader: ({ params }) => fetch(`http://localhost:5000/cars/${params.id}`)
       },
     ],
   },

@@ -10,7 +10,7 @@ const Login = () => {
 
 
   const handleLogin = e => {
-    event.preventDefault();
+    e.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;

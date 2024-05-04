@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
-console.log(import.meta.env.VITE_SOME_KEY);
+
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_apiKey,
