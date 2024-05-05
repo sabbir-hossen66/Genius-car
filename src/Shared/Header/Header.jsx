@@ -22,7 +22,7 @@ const Header = () => {
       user?.email ?
         <div className='flex items-center justify-evenly'>
           <li><Link to={'/bookings'}>My Bookings</Link></li>
-          <div className='navbar-end'><button onClick={handleLogOut}>LogOut</button></div>
+          {/* <div className='navbar-end'><button onClick={handleLogOut}>LogOut</button></div> */}
         </div>
         :
         <button><Link to={'/login'}>login</Link></button>
@@ -48,14 +48,14 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        {/* {
-          user?.email ? <div className='flex justify-center items-center'>
-            <button className="btn btn-outline btn-warning text-red-500">Appoinment</button>
-            <button onClick={handleLogOut}>LogOut</button>
-          </div>
-            :
-            <button><Link to={'/login'}>login</Link></button>
-        } */}
+        {
+          user?.email &&
+
+          <button onClick={handleLogOut}>LogOut</button>
+
+
+
+        }
         <button className="btn btn-outline btn-warning text-red-500">Appoinment</button>
       </div>
     </div>
