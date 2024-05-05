@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const CheckOut = () => {
   const { user } = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
   const service = useLoaderData();
   const { title, _id, price, img } = service;
 
@@ -35,6 +37,7 @@ const CheckOut = () => {
         if (data.insertedId) {
           alert('booking is redy')
         }
+        navigate(location?.state ? location.state : '/')
       })
   }
   return (
